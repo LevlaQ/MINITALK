@@ -6,11 +6,11 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:48:01 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 15:53:23 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 19:07:39 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "./minitalk.h"
 
 void	signal_handler(int signal_type, siginfo_t *info, void *m_info)
 {

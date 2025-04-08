@@ -6,11 +6,11 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:48:06 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 15:54:27 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 19:31:28 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk_bonus.h"
+#include "./minitalk_bonus.h"
 
 void	signal_handler(int signal_type, siginfo_t *info, void *m_info)
 {
@@ -36,10 +36,10 @@ void	signal_handler(int signal_type, siginfo_t *info, void *m_info)
 
 void	message_recieved(int pid)
 {
-	kill(pid, SIGUSR2);
-	write(1, "\nPID:\n", 6);
+	write(1, "\nMessage received from client PID: ", 35);
 	ft_putnbr_fd(pid, 1);
-	write(1, "\nMessage received\n", 18);
+	write(1, "\n", 1);
+	kill(pid, SIGUSR2);
 	pid = 0;
 }
 

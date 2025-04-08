@@ -6,11 +6,11 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:48:19 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 16:02:06 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 19:57:10 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk_bonus.h"
+#include "./minitalk_bonus.h"
 
 volatile sig_atomic_t	g_green_light;
 
@@ -20,7 +20,7 @@ void	server_feedback_handler(int signum)
 	if (signum == SIGUSR1)
 		g_green_light = 1;
 	else if (signum == SIGUSR2)
-		write(1, "Message sent\n", 13);
+		write(1, "\nMessage sent\n", 14);
 }
 
 void	send_the_char_to_server(int pid, char c)
@@ -54,6 +54,7 @@ int	main(int argc, char **argv)
 	if ((kill(pid, 0) == -1) || pid > 4194304)
 		return (write(2, "Error, proccess doesn't exist\n", 30), -1);
 	signal(SIGUSR1, server_feedback_handler);
+	signal(SIGUSR2, server_feedback_handler);
 	i = 0;
 	while (message[i])
 	{

@@ -6,7 +6,7 @@
 #    By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/27 13:54:40 by gyildiz           #+#    #+#              #
-#    Updated: 2025/04/08 15:47:40 by gyildiz          ###   ########.fr        #
+#    Updated: 2025/04/08 18:48:05 by gyildiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ $(CLIENT): $(OBJS_CLIENT) $(LIBFT)
 	${CC} ${OBJS_CLIENT} ${LIBFT} -o ${CLIENT}
 
 $(LIBFT):
-	${MAKE} -C ./libft
+	${MAKE} -C ./Libft
 	
 bonus: $(SERVER_BONUS) $(CLIENT_BONUS)
 
@@ -51,12 +51,12 @@ $(CLIENT_BONUS): $(OBJS_CLIENT_BONUS) $(LIBFT)
 	${CC} ${OBJS_CLIENT_BONUS} ${LIBFT} -o ${CLIENT_BONUS}
 
 clean:
-	$(MAKE) clean -C ./libft
+	$(MAKE) clean -C ./Libft
 	rm -rf ${OBJS_SERVER} ${OBJS_CLIENT} $(OBJS_SERVER_BONUS)\
 		${OBJS_CLIENT_BONUS}
 
 fclean:	clean
-	$(MAKE) fclean -C ./libft
+	$(MAKE) fclean -C ./Libft
 	rm -rf $(NAME) $(CLIENT) $(SERVER) $(SERVER_BONUS) $(CLIENT_BONUS)
 
 re:	fclean all

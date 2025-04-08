@@ -6,13 +6,12 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:46:30 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 16:04:38 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 19:17:22 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_BONUS_H
 # define MINITALK_BONUS_H
-# define _POSIX_C_SOURCE 200809L
 
 # include "./Libft/libft.h"
 # include <signal.h>

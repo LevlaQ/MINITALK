@@ -6,11 +6,11 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:48:22 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 16:02:06 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 19:07:46 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "./minitalk.h"
 
 volatile sig_atomic_t	g_green_light;
 

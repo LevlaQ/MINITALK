@@ -6,11 +6,11 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:48:38 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 15:59:13 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 19:08:07 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk_bonus.h"
+#include "./minitalk_bonus.h"
 
 int	client_error_main(int ac, char **av)
 {
