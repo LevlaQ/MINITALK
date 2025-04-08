@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client_utils.c                                     :+:      :+:    :+:   */
+/*   client_utils_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/06 15:42:36 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 16:04:08 by gyildiz          ###   ########.fr       */
+/*   Created: 2025/04/08 14:48:38 by gyildiz           #+#    #+#             */
+/*   Updated: 2025/04/08 15:59:13 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 int	client_error_main(int ac, char **av)
 {

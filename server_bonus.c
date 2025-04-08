@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 13:48:01 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 15:53:23 by gyildiz          ###   ########.fr       */
+/*   Created: 2025/04/08 14:48:06 by gyildiz           #+#    #+#             */
+/*   Updated: 2025/04/08 15:54:27 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	signal_handler(int signal_type, siginfo_t *info, void *m_info)
 {
@@ -25,12 +25,22 @@ void	signal_handler(int signal_type, siginfo_t *info, void *m_info)
 	bit++;
 	if (bit == 8)
 	{
-		if ((unsigned char)c < 128)
-			write(1, &c, 1);
+		if (c == '\0')
+			message_recieved(sender_pid);
+		write(1, &c, 1);
 		bit = 0;
 		c = 0;
 	}
 	kill(sender_pid, SIGUSR1);
+}
+
+void	message_recieved(int pid)
+{
+	kill(pid, SIGUSR2);
+	write(1, "\nPID:\n", 6);
+	ft_putnbr_fd(pid, 1);
+	write(1, "\nMessage received\n", 18);
+	pid = 0;
 }
 
 int	main(void)

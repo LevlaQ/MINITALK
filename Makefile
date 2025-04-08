@@ -6,7 +6,7 @@
 #    By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/27 13:54:40 by gyildiz           #+#    #+#              #
-#    Updated: 2025/04/08 14:46:27 by gyildiz          ###   ########.fr        #
+#    Updated: 2025/04/08 15:47:40 by gyildiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,20 @@ CFLAGS =		-Wall -Werror -Wextra
 
 SERVER =		server
 CLIENT =		client
+SERVER_BONUS =	server_bonus
+CLIENT_BONUS =	client_bonus
+
 SRCS_SERVER =	server.c
 SRCS_CLIENT =	client.c client_utils.c
 
 OBJS_SERVER =	$(SRCS_SERVER:.c=.o)
 OBJS_CLIENT =	$(SRCS_CLIENT:.c=.o)
+
+SRCS_SERVER_BONUS = server_bonus.c
+OBJS_SERVER_BONUS = $(SRCS_SERVER_BONUS:.c=.o)
+
+SRCS_CLIENT_BONUS = client_bonus.c client_utils_bonus.c
+OBJS_CLIENT_BONUS = $(SRCS_CLIENT_BONUS:.c=.o)
 
 all: $(SERVER) $(CLIENT)
 
@@ -32,14 +41,23 @@ $(CLIENT): $(OBJS_CLIENT) $(LIBFT)
 
 $(LIBFT):
 	${MAKE} -C ./libft
+	
+bonus: $(SERVER_BONUS) $(CLIENT_BONUS)
+
+$(SERVER_BONUS): $(OBJS_SERVER_BONUS) $(LIBFT)
+	${CC} ${OBJS_SERVER_BONUS} ${LIBFT} -o ${SERVER_BONUS}
+
+$(CLIENT_BONUS): $(OBJS_CLIENT_BONUS) $(LIBFT)
+	${CC} ${OBJS_CLIENT_BONUS} ${LIBFT} -o ${CLIENT_BONUS}
 
 clean:
 	$(MAKE) clean -C ./libft
-	rm -rf ${OBJS_SERVER} ${OBJS_CLIENT}
+	rm -rf ${OBJS_SERVER} ${OBJS_CLIENT} $(OBJS_SERVER_BONUS)\
+		${OBJS_CLIENT_BONUS}
 
 fclean:	clean
 	$(MAKE) fclean -C ./libft
-	rm -rf $(NAME) $(CLIENT)
+	rm -rf $(NAME) $(CLIENT) $(SERVER) $(SERVER_BONUS) $(CLIENT_BONUS)
 
 re:	fclean all
 

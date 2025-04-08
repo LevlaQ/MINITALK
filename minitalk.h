@@ -6,7 +6,7 @@
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:50:25 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/08 14:46:00 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 15:59:37 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 # define MINITALK_H
 # define _POSIX_C_SOURCE 200809L
 
-/*
-	Sigactionda posix kullanıyorum
-*/
-
-# include <signal.h>
-# include <sys/signal.h> //Bunsuz çalışıp çalışmadığına bakarsın
-# include <unistd.h>
-# include <stdlib.h>
 # include "./Libft/libft.h"
+# include <signal.h>
+# include <stdlib.h>
+# include <sys/signal.h>
+# include <unistd.h>
 
 int		client_error_main(int ac, char **av);
 void	print_client_usage_instructions(void);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 13:48:22 by gyildiz           #+#    #+#             */
+/*   Created: 2025/04/08 14:48:19 by gyildiz           #+#    #+#             */
 /*   Updated: 2025/04/08 16:02:06 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 volatile sig_atomic_t	g_green_light;
 
@@ -19,6 +19,8 @@ void	server_feedback_handler(int signum)
 	(void)signum;
 	if (signum == SIGUSR1)
 		g_green_light = 1;
+	else if (signum == SIGUSR2)
+		write(1, "Message sent\n", 13);
 }
 
 void	send_the_char_to_server(int pid, char c)
