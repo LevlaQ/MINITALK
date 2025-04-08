@@ -6,7 +6,7 @@
 /*   By: gyildiz <gyildiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:48:01 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/06 16:54:16 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 14:28:41 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 void	signal_handler(int signal_type, siginfo_t *info, void *m_info)
 {
 	(void)m_info; //parantez içinde void ne demek
+	static char	c;
+	static int	bit;
+	pid_t		sender_pid;
+	
+	sender_pid = info->si_pid;
+	if( signal_type == SIGUSR1)
+		c |= (1 << bit); //c üzerine eklemeler yapıyor
+	bit++; //her gelen sinyalde bit'i bir arttırıyor
+	if (bit == 8)
+	{
+		if((unsigned char)c < 128) //ascii karakterleri harici basmasın
+			write(1, &c, 1);
+		bit = 0;
+		c = 0;
+	}
+	kill(sender_pid, SIGUSR1);
 }
 
 

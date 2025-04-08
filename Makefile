@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gyildiz <gyildiz@student.42istanbul.com    +#+  +:+       +#+         #
+#    By: gyildiz <gyildiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/27 13:54:40 by gyildiz           #+#    #+#              #
-#    Updated: 2025/03/27 14:04:14 by gyildiz          ###   ########.fr        #
+#    Updated: 2025/04/08 14:29:58 by gyildiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS =		-Wall -Werror -Wextra
 SERVER =		server
 CLIENT =		client
 SRCS_SERVER =	server.c
-SRCS_CLIENT =	client.c
+SRCS_CLIENT =	client.c client_utils.c
 
 OBJS_SERVER =	$(SRCS_SERVER:.c=.o)
 OBJS_CLIENT =	$(SRCS_CLIENT:.c=.o)

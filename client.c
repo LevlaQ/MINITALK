@@ -6,7 +6,7 @@
 /*   By: gyildiz <gyildiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:48:22 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/07 11:36:31 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 12:42:00 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int	main(int argc, char **argv)
 		send_the_char_to_server(pid, message[i]);
 		i++;
 	}
+	send_the_char_to_server(pid, '\0'); //Mesajın bittiğine dair satır sonu karakteri gönder
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gyildiz <gyildiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:42:36 by gyildiz           #+#    #+#             */
-/*   Updated: 2025/04/07 11:56:17 by gyildiz          ###   ########.fr       */
+/*   Updated: 2025/04/08 14:34:50 by gyildiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	client_error_main(int ac, char **av)
 	return (1);
 }
 
-int	validate_pid_input(const char *pid) //pid yalnızca rakamlardan oluşabilir
+int	validate_pid_input(char *pid) //pid yalnızca rakamlardan oluşabilir
 {
 	int	i;
 
